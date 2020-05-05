@@ -8,6 +8,7 @@ import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -28,6 +29,12 @@ class IndexControllerTest {
 
         assertEquals("index", controller.index(), () -> "Another Expensive Message " +
                 "Make me only if you have to");
+    }
+
+    @Test
+    void assertJ() {
+        assertThat((controller.index().equals("index")));
+
     }
 
     @Test
@@ -92,13 +99,15 @@ class IndexControllerTest {
     void testMeOnJava11() {
     }
 
-    @EnabledIfEnvironmentVariable(named = "USER", matches = "jt")
+    @EnabledIfEnvironmentVariable(named = "USERNAME", matches = "Shady")
     @Test
-    void testIfUserJT() {
+    void testIfUserShady() {
     }
 
-    @EnabledIfEnvironmentVariable(named = "USER", matches = "fred")
+    @EnabledIfEnvironmentVariable(named = "USERNAME", matches = "fred")
     @Test
     void testIfUserFred() {
     }
+
+
 }
