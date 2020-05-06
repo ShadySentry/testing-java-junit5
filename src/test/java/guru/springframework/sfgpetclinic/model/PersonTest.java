@@ -42,7 +42,7 @@ class PersonTest implements ModelTests {
         System.out.println(testInfo.getDisplayName() + " : "+repetitionInfo.getCurrentRepetition());
     }
 
-    @RepeatedTest(value = 5,name = DISPLAY_NAME_PLACEHOLDER +": " +CURRENT_REPETITION_PLACEHOLDER + " of " +TOTAL_REPETITIONS_PLACEHOLDER)
+    @RepeatedTest(value = 5,name = DISPLAY_NAME_PLACEHOLDER +": " +CURRENT_REPETITION_PLACEHOLDER + " | " +TOTAL_REPETITIONS_PLACEHOLDER)
     @DisplayName("repeatedTest With Assignment")
     void repeatedTestWithAssignment(){
 

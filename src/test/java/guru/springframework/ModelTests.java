@@ -2,7 +2,6 @@ package guru.springframework;
 
 import org.junit.jupiter.api.*;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Tag("model")
 public interface ModelTests {
     @BeforeEach
